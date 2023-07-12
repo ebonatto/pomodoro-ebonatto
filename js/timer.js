@@ -1,5 +1,7 @@
 // VARS
 
+// Sound
+let alarm = new Audio("js/alarm.mp3");
 // Timers vars
 let minute = 0;
 let second = 0;
@@ -97,6 +99,7 @@ function timer() {
       second = 0;
       skipTimer();
       pauseTimer();
+      alarm.play();
     }
   }
 
