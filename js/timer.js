@@ -18,6 +18,9 @@ let cron;
 // Mark if timer is running
 let running = false;
 
+// Menu clicks function
+let changedByClick;
+
 // Elements
 const selectButtons = document.forms["select-botoes"].elements["timer-select"];
 const startPauseButton = document.getElementById("start-pause");
@@ -45,10 +48,13 @@ saveButton.addEventListener("click", () => {
   switchTimerConfig();
 });
 document.forms["select-botoes"].addEventListener("change", () => {
+  changedByClick = true;
   changeTimer();
 });
 
 // Sets initial timer
+setLocalStorage();
+document.getElementById(`${sequence[stageNow]}-select`).checked = true;
 changeTimer();
 minuteSpan.innerText = returnData(minute);
 secondSpan.innerText = returnData(second);
@@ -121,12 +127,17 @@ function changeTimer() {
     stageNow = 1;
   } else if (selectButtons[1].checked) {
     minute = document.getElementById("pomodoro-config").value;
+    if (changedByClick) {
+      stageNow = 0;
+      changedByClick = false;
+    }
   } else {
     minute = document.getElementById("long-break-config").value;
     stageNow = 3;
   }
   tempoInicial = minute;
   second = 0;
+  changeLocalStorage();
   resetTimer();
 }
 
@@ -154,4 +165,49 @@ function setCircleDasharray() {
   document
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+function setLocalStorage() {
+  if (localStorage.length > 0) {
+    stageNow = JSON.parse(localStorage.getItem("stage"));
+    document.getElementById("short-break-config").value = JSON.parse(
+      localStorage.getItem("short-break")
+    );
+    document.getElementById("pomodoro-config").value = JSON.parse(
+      localStorage.getItem("pomodoro")
+    );
+    document.getElementById("long-break-config").value = JSON.parse(
+      localStorage.getItem("long-break")
+    );
+  } else {
+    localStorage.setItem("stage", JSON.stringify(0));
+    localStorage.setItem(
+      "short-break",
+      JSON.stringify(document.getElementById("short-break-config").value)
+    );
+    localStorage.setItem(
+      "pomodoro",
+      JSON.stringify(document.getElementById("pomodoro-config").value)
+    );
+    localStorage.setItem(
+      "long-break",
+      JSON.stringify(document.getElementById("long-break-config").value)
+    );
+  }
+}
+
+function changeLocalStorage() {
+  localStorage.setItem("stage", JSON.stringify(stageNow));
+  localStorage.setItem(
+    "short-break",
+    JSON.stringify(document.getElementById("short-break-config").value)
+  );
+  localStorage.setItem(
+    "pomodoro",
+    JSON.stringify(document.getElementById("pomodoro-config").value)
+  );
+  localStorage.setItem(
+    "long-break",
+    JSON.stringify(document.getElementById("long-break-config").value)
+  );
 }
