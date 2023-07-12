@@ -9,6 +9,17 @@
   --font: "Inter", sans-serif;
 
   --timer-size: 400px;
+
+  /* theme colors */
+  --swatch-size: 50px;
+  --swatch-border-radius: 15px;
+
+  --color1: #4d0194;
+  --color2: #4d0194;
+  --color3: #4d0194;
+  --color4: #4d0194;
+  --color5: #4d0194;
+  --color6: #4d0194;
 }
 
 body {
@@ -281,6 +292,57 @@ body {
 
 .save:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+.colors input {
+  display: none;
+}
+
+.swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#color1 {
+  background-color: #4d0194;
+}
+
+#color2 {
+  background-color: #4d0194;
+}
+
+#color3 {
+  background-color: #4d0194;
+}
+
+#color4 {
+  background-color: #4d0194;
+}
+
+#color5 {
+  background-color: #4d0194;
+}
+
+#color6 {
+  background-color: #4d0194;
 }
 
 .hidden {

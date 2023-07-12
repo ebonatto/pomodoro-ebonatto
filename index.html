@@ -21,25 +21,24 @@
       <span class="material-icons nav-button" id="config-button">settings</span>
     </nav>
     <div class="app">
-      <div class="config hidden">
-        <h2>Set time (minutes)</h2>
-        <form name="config-botoes" class="config-botoes">
-          <span>
-            <label for="short-break-config">Short Break</label>
-            <input type="number" name="short-break-config" id="short-break-config" max="99" value="1" />
-          </span>
-          <span>
-            <label for="pomodoro-config">Pomodoro</label>
-            <input type="number" name="pomodoro-config" id="pomodoro-config" max="99" value="30" />
-          </span>
-          <span>
-            <label for="long-break-config">Long Break</label>
-            <input type="number" name="long-break-config" id="long-break-config" max="99" value="15" />
-          </span>
+      <div class="theme">
+        <h2>Color</h2>
+        <form name="theme-selector" class="colors">
+          <input type="radio" name="theme-selector" id="color1">
+          <label for="color1" id="color1" class="swatch"></label>
+          <input type="radio" name="theme-selector" id="color2">
+          <label for="color2" id="color2" class="swatch"></label>
+          <input type="radio" name="theme-selector" id="color3">
+          <label for="color3" id="color3" class="swatch"></label>
+          <input type="radio" name="theme-selector" id="color4">
+          <label for="color4" id="color4" class="swatch"></label>
+          <input type="radio" name="theme-selector" id="color5">
+          <label for="color5" id="color5" class="swatch"></label>
+          <input type="radio" name="theme-selector" id="color6">
+          <label for="color6" id="color6" class="swatch"></label>
         </form>
-        <button class="save" id="save">SAVE</button>
       </div>
-      <div class="timer">
+      <div class="timer hidden">
         <form name="select-botoes" class="select-botoes">
           <input type="radio" name="timer-select" id="short-break-select" />
           <label for="short-break-select">Short Break</label>
@@ -73,6 +72,24 @@
           <span id="start-pause" class="start-pause">START</span>
           <span id="skip" class="material-icons timer-icon">skip_next</span>
         </div>
+      </div>
+      <div class="config hidden">
+        <h2>Set time (minutes)</h2>
+        <form name="config-botoes" class="config-botoes">
+          <span>
+            <label for="short-break-config">Short Break</label>
+            <input type="number" name="short-break-config" id="short-break-config" max="99" value="1" />
+          </span>
+          <span>
+            <label for="pomodoro-config">Pomodoro</label>
+            <input type="number" name="pomodoro-config" id="pomodoro-config" max="99" value="30" />
+          </span>
+          <span>
+            <label for="long-break-config">Long Break</label>
+            <input type="number" name="long-break-config" id="long-break-config" max="99" value="15" />
+          </span>
+        </form>
+        <button class="save" id="save">SAVE</button>
       </div>
     </div>
   </main>
