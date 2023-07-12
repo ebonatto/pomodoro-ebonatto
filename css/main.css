@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --font: "Inter", sans-serif;
+
+  --timer-size: 400px;
+}
+
+body {
+  font-family: var(--font);
+}
+
+.material-icons {
+  user-select: none;
+  cursor: pointer;
+}
+
+.material-icons:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 100px;
+  padding: 10px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.material-icons.nav-button {
+  font-size: 40px;
+  transition: ease-in-out 100ms;
+}
+
+.app {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 30px 35px;
+  border-radius: 30px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.select-botoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.select-botoes input {
+  display: none;
+}
+
+.select-botoes label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  width: 180px;
+  height: 65px;
+
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  transition: background ease-in-out 150ms;
+}
+
+.select-botoes label:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.select-botoes input:checked + label {
+  background-color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+}
+
+.base-timer {
+  position: relative;
+  height: var(--timer-size);
+  width: var(--timer-size);
+}
+
+/* Timer Circle */
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: rgba(0, 0, 0, 0.4);
+}
+
+.base-timer__label {
+  position: absolute;
+
+  /* Size should match the parent container */
+  width: var(--timer-size);
+  height: var(--timer-size);
+
+  /* Keep the label aligned to the top */
+  top: 0;
+
+  /* Create a flexible box that centers content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sort of an arbitrary number; adjust to your liking */
+  font-size: 80px;
+  font-weight: 600;
+}
+
+.base-timer__path-remaining {
+  /* Just as thick as the original ring */
+  stroke-width: 7px;
+
+  /* Rounds the line endings to create a seamless circle */
+  stroke-linecap: round;
+
+  /* Makes sure the animation starts at the top of the circle */
+  transform: rotate(90deg);
+  transform-origin: center;
+
+  /* One second aligns with the speed of the countdown timer */
+  transition: 300ms linear all;
+
+  /* Allows the ring to change color when the color value updates */
+  stroke: rgba(0, 0, 0, 1);
+}
+
+.base-timer__svg {
+  /* Flips the svg and makes the animation to move left-to-right */
+  transform: scaleX(-1);
+}
+
+.timer-botoes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+}
+
+.timer-botoes span {
+  cursor: pointer;
+}
+
+.start-pause {
+  display: table-cell;
+  --height: 70px;
+  width: 280px;
+  height: var(--height);
+  line-height: var(--height);
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  border-radius: 30px;
+
+  transition: ease-in-out 100ms;
+}
+
+.start-pause:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.material-icons.timer-icon {
+  font-size: 60px;
+  transition: ease-in-out 100ms;
+}
+
+.config {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.config-botoes {
+  display: flex;
+  gap: 15px;
+}
+
+.config-botoes span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.config-botoes label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 30px;
+  width: 180px;
+  height: 65px;
+
+  color: white;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.config-botoes input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  border: none;
+  width: 180px;
+  height: 65px;
+
+  color: white;
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+
+  transition: ease-in-out 200ms;
+}
+
+.config-botoes input:focus {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.save {
+  display: table-cell;
+  --height: 70px;
+  width: 280px;
+  height: var(--height);
+  line-height: var(--height);
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+
+  transition: ease-in-out 100ms;
+}
+
+.save:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Remove arrows from numeric input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

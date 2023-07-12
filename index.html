@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/main.css" />
+  <script src="./js/nav.js" defer></script>
+  <script src="./js/timer.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title id="tab-title">Pomodoro</title>
+</head>
+
+<body>
+  <main class="main">
+    <nav class="nav">
+      <span class="material-icons nav-button" id="timer-button">timer</span>
+      <h1 class="title">POMODORO</h1>
+      <span class="material-icons nav-button" id="config-button">settings</span>
+    </nav>
+    <div class="app">
+      <div class="config hidden">
+        <h2>Set time (minutes)</h2>
+        <form name="config-botoes" class="config-botoes">
+          <span>
+            <label for="short-break-config">Short Break</label>
+            <input type="number" name="short-break-config" id="short-break-config" max="99" value="1" />
+          </span>
+          <span>
+            <label for="pomodoro-config">Pomodoro</label>
+            <input type="number" name="pomodoro-config" id="pomodoro-config" max="99" value="30" />
+          </span>
+          <span>
+            <label for="long-break-config">Long Break</label>
+            <input type="number" name="long-break-config" id="long-break-config" max="99" value="15" />
+          </span>
+        </form>
+        <button class="save" id="save">SAVE</button>
+      </div>
+      <div class="timer">
+        <form name="select-botoes" class="select-botoes">
+          <input type="radio" name="timer-select" id="short-break-select" />
+          <label for="short-break-select">Short Break</label>
+
+          <input type="radio" name="timer-select" id="pomodoro-select" checked />
+          <label for="pomodoro-select">Pomodoro</label>
+
+          <input type="radio" name="timer-select" id="long-break-select" />
+          <label for="long-break-select">Long Break</label>
+        </form>
+
+        <div class="base-timer">
+          <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <g class="base-timer__circle">
+              <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+              <path id="base-timer-path-remaining" stroke-dasharray="283"
+                class="base-timer__path-remaining ${remainingPathColor}" d="
+                            M 50, 50
+                            m -45, 0
+                            a 45,45 0 1,0 90,0
+                            a 45,45 0 1,0 -90,0"></path>
+            </g>
+          </svg>
+          <span id="base-timer-label" class="base-timer__label">
+            <span id="minute">00</span>:<span id="second">00</span>
+          </span>
+        </div>
+
+        <div class="timer-botoes">
+          <span id="reset" class="material-icons timer-icon">replay</span>
+          <span id="start-pause" class="start-pause">START</span>
+          <span id="skip" class="material-icons timer-icon">skip_next</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
