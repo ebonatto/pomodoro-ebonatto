@@ -32,7 +32,7 @@ body {
 }
 
 .material-icons:hover {
-  color: rgba(0, 0, 0, 0.8);
+  color: var(--secondary-color);
 }
 
 .main {
@@ -41,6 +41,7 @@ body {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
+  background-color: var(--background-color);
 }
 
 .nav {
@@ -63,7 +64,7 @@ body {
 }
 
 .app {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--main-color);
   padding: 30px 35px;
   border-radius: 30px;
 }
@@ -93,7 +94,7 @@ body {
   justify-content: center;
 
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--background-color);
   border-radius: 30px;
   width: 180px;
   height: 65px;
@@ -347,7 +348,10 @@ body {
 }
 
 .color1-theme {
-  background-color: var(--color1);
+  --main-color: var(--color1);
+  --text-color: #ffffff;
+  --background-color: #330161;
+  --secondary-color: #9646e0;
 }
 
 .color2-theme {
