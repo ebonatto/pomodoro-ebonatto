@@ -172,11 +172,11 @@ body {
   stroke-linecap: round;
 
   /* Makes sure the animation starts at the top of the circle */
-  transform: rotate(90deg);
-  transform-origin: center;
+  /* transform: rotate(90deg);
+  transform-origin: center; */
 
   /* One second aligns with the speed of the countdown timer */
-  transition: 1s linear all;
+  transition: linear 1s;
 
   /* Allows the ring to change color when the color value updates */
   stroke: var(--text);
