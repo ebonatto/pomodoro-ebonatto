@@ -18,12 +18,12 @@
   <main class="main">
     <nav class="nav">
       <span class="material-icons nav-button" id="theme-button">palette</span>
-      <h1 class="title">POMODORO</h1>
+      <h1 class="title" id="title">POMODORO</h1>
       <span class="material-icons nav-button" id="config-button">settings</span>
     </nav>
     <div class="app">
       <div class="theme">
-        <h2>Color</h2>
+        <h2 class="menu-title">Color</h2>
         <form name="theme-selector" class="colors" id="colors">
           <input type="radio" name="theme-selector" id="color1">
           <label for="color1" id="color1-swatch" class="swatch"></label>
@@ -80,19 +80,22 @@
         </div>
       </div>
       <div class="config hidden">
-        <h2>Set time (minutes)</h2>
+        <h2 class="menu-title">Set time (minutes)</h2>
         <form name="config-botoes" class="config-botoes">
           <span>
             <label for="short-break-config">Short Break</label>
-            <input type="number" name="short-break-config" id="short-break-config" max="99" value="1" />
+            <input type="number" name="short-break-config" id="short-break-config" max="99" value="1"
+              onclick="this.select()" />
           </span>
           <span>
             <label for="pomodoro-config">Pomodoro</label>
-            <input type="number" name="pomodoro-config" id="pomodoro-config" max="99" value="30" />
+            <input type="number" name="pomodoro-config" id="pomodoro-config" max="99" value="30"
+              onclick="this.select()" />
           </span>
           <span>
             <label for="long-break-config">Long Break</label>
-            <input type="number" name="long-break-config" id="long-break-config" max="99" value="15" />
+            <input type="number" name="long-break-config" id="long-break-config" max="99" value="15"
+              onclick="this.select()" />
           </span>
         </form>
         <button class="save" id="save">SAVE</button>
