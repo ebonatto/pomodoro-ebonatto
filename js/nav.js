@@ -1,4 +1,5 @@
 const themeButton = document.getElementById("theme-button");
+const pomoButton = document.getElementById("title");
 const configButton = document.getElementById("config-button");
 
 const themeDiv = document.querySelector(".theme");
@@ -10,8 +11,15 @@ const configDiv = document.querySelector(".config");
 //   document.querySelector(".timer").classList.remove("hidden");
 // });
 
+pomoButton.addEventListener("click", () => switchTimer());
 configButton.addEventListener("click", () => switchTimerConfig());
 themeButton.addEventListener("click", () => switchTimerTheme());
+
+function switchTimer() {
+  configDiv.classList.add("hidden");
+  themeDiv.classList.add("hidden");
+  timerDiv.classList.remove("hidden");
+}
 
 function switchTimerConfig() {
   if (configDiv.classList.contains("hidden")) {
