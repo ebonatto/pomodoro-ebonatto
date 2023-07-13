@@ -22,8 +22,9 @@
   --color6: #00e846;
 }
 
-body {
+.container {
   font-family: var(--font);
+  background-color: var(--base-color);
 }
 
 .material-icons {
@@ -43,7 +44,6 @@ body {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  background-color: var(--base-color);
 }
 
 .nav {

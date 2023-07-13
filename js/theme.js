@@ -1,7 +1,7 @@
 const form = document.getElementById("colors");
 const inputs = form.getElementsByTagName("input");
 const labels = form.getElementsByTagName("label");
-const main = document.querySelector("main");
+const body = document.querySelector("body");
 const novaGeracaoLogo = document.querySelector(".nova-geracao");
 
 const defaultTheme = "color6";
@@ -23,7 +23,7 @@ function getCheckedInputId() {
 }
 
 function changeTheme(colorId) {
-  main.className = `main ${colorId}-theme`;
+  body.className = `container ${colorId}-theme`;
   if (colorId == "color6" && novaGeracaoLogo.classList.contains("hidden")) {
     novaGeracaoLogo.classList.remove("hidden");
   } else {
