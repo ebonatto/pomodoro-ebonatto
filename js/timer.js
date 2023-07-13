@@ -168,7 +168,7 @@ function setCircleDasharray() {
 }
 
 function setLocalStorage() {
-  if (localStorage.length > 0) {
+  if (localStorage.getItem("stage")) {
     stageNow = JSON.parse(localStorage.getItem("stage"));
     document.getElementById("short-break-config").value = JSON.parse(
       localStorage.getItem("short-break")
