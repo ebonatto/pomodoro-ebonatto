@@ -440,7 +440,8 @@ body {
   --text-hover: rgba(0, 0, 0, 0.8);
 }
 
-.color6-theme nav {
+.color6-theme nav,
+.color6-theme footer {
   --text: #00ff00;
   --text-hover: #00b800;
 }
