@@ -15,7 +15,7 @@
   --swatch-border-radius: 15px;
 
   --color1: #4d0194;
-  --color2: #4d0194;
+  --color2: #00e846;
   --color3: #4d0194;
   --color4: #4d0194;
   --color5: #4d0194;
@@ -36,8 +36,9 @@ body {
 }
 
 .main {
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
 }
@@ -321,28 +322,36 @@ body {
   cursor: pointer;
 }
 
-#color1 {
-  background-color: #4d0194;
+#color1-swatch {
+  background-color: var(--color1);
 }
 
-#color2 {
-  background-color: #4d0194;
+#color2-swatch {
+  background-color: var(--color2);
 }
 
-#color3 {
-  background-color: #4d0194;
+#color3-swatch {
+  background-color: var(--color3);
 }
 
-#color4 {
-  background-color: #4d0194;
+#color4-swatch {
+  background-color: var(--color4);
 }
 
-#color5 {
-  background-color: #4d0194;
+#color5-swatch {
+  background-color: var(--color5);
 }
 
-#color6 {
-  background-color: #4d0194;
+#color6-swatch {
+  background-color: var(--color6);
+}
+
+.color1-theme {
+  background-color: var(--color1);
+}
+
+.color2-theme {
+  background-color: var(--color2);
 }
 
 .hidden {

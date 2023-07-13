@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8" />
@@ -7,6 +7,7 @@
 
   <link rel="stylesheet" href="./css/main.css" />
   <script src="./js/nav.js" defer></script>
+  <script src="./js/theme.js" defer></script>
   <script src="./js/timer.js" defer></script>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -16,26 +17,31 @@
 <body>
   <main class="main">
     <nav class="nav">
-      <span class="material-icons nav-button" id="timer-button">palette</span>
+      <span class="material-icons nav-button" id="theme-button">palette</span>
       <h1 class="title">POMODORO</h1>
       <span class="material-icons nav-button" id="config-button">settings</span>
     </nav>
     <div class="app">
       <div class="theme">
         <h2>Color</h2>
-        <form name="theme-selector" class="colors">
+        <form name="theme-selector" class="colors" id="colors">
           <input type="radio" name="theme-selector" id="color1">
-          <label for="color1" id="color1" class="swatch"></label>
+          <label for="color1" id="color1-swatch" class="swatch"></label>
+
           <input type="radio" name="theme-selector" id="color2">
-          <label for="color2" id="color2" class="swatch"></label>
+          <label for="color2" id="color2-swatch" class="swatch"></label>
+
           <input type="radio" name="theme-selector" id="color3">
-          <label for="color3" id="color3" class="swatch"></label>
+          <label for="color3" id="color3-swatch" class="swatch"></label>
+
           <input type="radio" name="theme-selector" id="color4">
-          <label for="color4" id="color4" class="swatch"></label>
+          <label for="color4" id="color4-swatch" class="swatch"></label>
+
           <input type="radio" name="theme-selector" id="color5">
-          <label for="color5" id="color5" class="swatch"></label>
+          <label for="color5" id="color5-swatch" class="swatch"></label>
+
           <input type="radio" name="theme-selector" id="color6">
-          <label for="color6" id="color6" class="swatch"></label>
+          <label for="color6" id="color6-swatch" class="swatch"></label>
         </form>
       </div>
       <div class="timer hidden">
