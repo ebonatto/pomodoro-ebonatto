@@ -3,7 +3,10 @@ const inputs = form.getElementsByTagName("input");
 const labels = form.getElementsByTagName("label");
 const main = document.querySelector("main");
 
-changeTheme("color5");
+const defaultTheme = "color6";
+
+setLocalStorageTheme();
+changeTheme(localStorage.getItem("theme"));
 
 form.addEventListener("change", () => {
   changeTheme(getCheckedInputId());
@@ -19,6 +22,14 @@ function getCheckedInputId() {
 }
 
 function changeTheme(colorId) {
-  console.log("themechange");
   main.className = `main ${colorId}-theme`;
+  localStorage.setItem("theme", colorId);
+}
+
+function setLocalStorageTheme() {
+  if (localStorage.getItem("theme")) {
+    changeTheme(localStorage.getItem("theme"));
+  } else {
+    localStorage.setItem("theme", defaultTheme);
+  }
 }
