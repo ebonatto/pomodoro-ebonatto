@@ -1,4 +1,4 @@
-let baseColor = "#f3f3f3";
+let baseColor = "#00E846";
 
 let theme = createTheme(baseColor);
 console.log(theme);

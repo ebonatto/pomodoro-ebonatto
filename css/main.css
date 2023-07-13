@@ -19,7 +19,7 @@
   --color3: #262627;
   --color4: #f2f2f2;
   --color5: #230042;
-  --color6: #00ff00;
+  --color6: #00e846;
 }
 
 body {
@@ -432,9 +432,9 @@ body {
 /* nova geração */
 .color6-theme {
   --base-color: rgba(0, 0, 0, 1);
-  --secondary-color: #00ff00;
-  --tertiary-color: #0be00b;
-  --select-color: #00b800;
+  --secondary-color: #00e846;
+  --tertiary-color: #09c842;
+  --select-color: #009e2f;
 
   --text: rgba(0, 0, 0, 1);
   --text-hover: rgba(0, 0, 0, 0.8);
@@ -442,8 +442,13 @@ body {
 
 .color6-theme nav,
 .color6-theme footer {
-  --text: #00ff00;
-  --text-hover: #00b800;
+  --text: #00e846;
+  --text-hover: #009e2f;
+}
+
+.theme img {
+  margin: 15px 0;
+  width: 250px;
 }
 
 .footer {
