@@ -14,12 +14,15 @@
   --swatch-size: 50px;
   --swatch-border-radius: 15px;
 
-  --color1: #4d0194;
-  --color2: #00e846;
-  --color3: #4d0194;
-  --color4: #4d0194;
-  --color5: #4d0194;
-  --color6: #4d0194;
+  --color1: #da2b2b;
+  --color2: #3a7098;
+  --color3: #262627;
+  --color4: #f2f2f2;
+  --color5: #230042;
+  --color6: #00ff00;
+
+  --text: rgba(255, 255, 255, 1);
+  --text-hover: rgba(255, 255, 255, 0.6);
 }
 
 body {
@@ -29,10 +32,11 @@ body {
 .material-icons {
   user-select: none;
   cursor: pointer;
+  color: var(--text);
 }
 
 .material-icons:hover {
-  color: var(--secondary-color);
+  color: var(--text-hover);
 }
 
 .main {
@@ -41,7 +45,7 @@ body {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  background-color: var(--background-color);
+  background-color: var(--base-color);
 }
 
 .nav {
@@ -56,6 +60,15 @@ body {
 .title {
   font-size: 40px;
   font-weight: 900;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+
+  transition: ease-in-out 100ms;
+}
+
+.title:hover {
+  color: var(--text-hover);
 }
 
 .material-icons.nav-button {
@@ -64,7 +77,7 @@ body {
 }
 
 .app {
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
   padding: 30px 35px;
   border-radius: 30px;
 }
@@ -94,23 +107,23 @@ body {
   justify-content: center;
 
   cursor: pointer;
-  background-color: var(--background-color);
+
   border-radius: 30px;
   width: 180px;
   height: 65px;
 
-  color: white;
+  color: var(--text);
   font-weight: 400;
   font-size: 20px;
   transition: background ease-in-out 150ms;
 }
 
 .select-botoes label:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--tertiary-color);
 }
 
 .select-botoes input:checked + label {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--select-color);
   font-weight: 600;
 }
 
@@ -130,7 +143,7 @@ body {
 /* The SVG path that displays the timer's progress */
 .base-timer__path-elapsed {
   stroke-width: 7px;
-  stroke: rgba(0, 0, 0, 0.4);
+  stroke: var(--tertiary-color);
 }
 
 .base-timer__label {
@@ -151,6 +164,7 @@ body {
   /* Sort of an arbitrary number; adjust to your liking */
   font-size: 80px;
   font-weight: 600;
+  color: var(--text);
 }
 
 .base-timer__path-remaining {
@@ -168,7 +182,7 @@ body {
   transition: 1s linear all;
 
   /* Allows the ring to change color when the color value updates */
-  stroke: rgba(0, 0, 0, 1);
+  stroke: var(--text);
 }
 
 .base-timer__svg {
@@ -193,8 +207,8 @@ body {
   width: 280px;
   height: var(--height);
   line-height: var(--height);
-  background-color: black;
-  color: white;
+  background-color: var(--text);
+  color: var(--tertiary-color);
   text-align: center;
   font-size: 40px;
   font-weight: 500;
@@ -204,7 +218,7 @@ body {
 }
 
 .start-pause:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--text-hover);
 }
 
 .material-icons.timer-icon {
@@ -220,9 +234,17 @@ body {
   gap: 15px;
 }
 
+.menu-title {
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 33px;
+}
+
 .config-botoes {
   display: flex;
   gap: 15px;
+  padding: 30px 0;
 }
 
 .config-botoes span {
@@ -237,12 +259,12 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: rgba(0, 0, 0, 1);
+  /* background-color: var(--select-color); */
   border-radius: 30px;
   width: 180px;
-  height: 65px;
+  height: 35px;
 
-  color: white;
+  color: var(--text);
   font-family: var(--font);
   font-weight: 600;
   font-size: 20px;
@@ -254,13 +276,13 @@ body {
   justify-content: center;
 
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--tertiary-color);
   border-radius: 30px;
   border: none;
   width: 180px;
   height: 65px;
 
-  color: white;
+  color: var(--text);
   font-family: var(--font);
   font-weight: 600;
   font-size: 20px;
@@ -269,8 +291,9 @@ body {
   transition: ease-in-out 200ms;
 }
 
-.config-botoes input:focus {
-  background-color: rgba(0, 0, 0, 0.8);
+.config-botoes input:focus,
+.config-botoes input:hover {
+  background-color: var(--select-color);
 }
 
 .save {
@@ -279,8 +302,8 @@ body {
   width: 280px;
   height: var(--height);
   line-height: var(--height);
-  background-color: black;
-  color: white;
+  background-color: var(--text);
+  color: var(--tertiary-color);
   text-align: center;
   font-size: 40px;
   font-weight: 500;
@@ -293,7 +316,7 @@ body {
 }
 
 .save:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--text-hover);
 }
 
 .theme {
@@ -320,7 +343,17 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 15px;
+  border: rgba(0, 0, 0, 0.3) solid 2px;
   cursor: pointer;
+  transition: ease-in-out 100ms;
+}
+
+.swatch:hover {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+.colors input:checked + label {
+  border-color: var(--text);
 }
 
 #color1-swatch {
@@ -348,14 +381,61 @@ body {
 }
 
 .color1-theme {
-  --main-color: var(--color1);
-  --text-color: #ffffff;
-  --background-color: #330161;
-  --secondary-color: #9646e0;
+  --base-color: #da2b2b;
+  --secondary-color: #dd4040;
+  --tertiary-color: #c12f2f;
+  --select-color: #a01c1c;
 }
 
 .color2-theme {
-  background-color: var(--color2);
+  --base-color: #3a7098;
+  --secondary-color: #417eaa;
+  --tertiary-color: #3c6480;
+  --select-color: #264a64;
+}
+
+.color3-theme {
+  --base-color: #262627;
+  --secondary-color: #323234;
+  --tertiary-color: #1e1e1a;
+  --select-color: #030303;
+}
+
+.color4-theme {
+  --base-color: #f2f2f2;
+  --secondary-color: #ffffff;
+  --tertiary-color: #e6eaea;
+  --select-color: #cfcfcf;
+
+  --text: rgba(0, 0, 0, 1);
+  --text-hover: rgba(0, 0, 0, 0.8);
+}
+
+/* ebonatto.dev */
+.color5-theme {
+  --base-color: #160029;
+  --secondary-color: #230042;
+  --tertiary-color: #420679;
+  --select-color: #28004c;
+
+  --text: #f5ebff;
+  --text-hover: #ba71fe;
+}
+
+/* nova geração */
+.color6-theme {
+  --base-color: rgba(0, 0, 0, 1);
+  --secondary-color: #00ff00;
+  --tertiary-color: #0be00b;
+  --select-color: #00b800;
+
+  --text: rgba(0, 0, 0, 1);
+  --text-hover: rgba(0, 0, 0, 0.8);
+}
+
+.color6-theme nav {
+  --text: #00ff00;
+  --text-hover: #00b800;
 }
 
 .hidden {
