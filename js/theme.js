@@ -3,7 +3,7 @@ const inputs = form.getElementsByTagName("input");
 const labels = form.getElementsByTagName("label");
 const main = document.querySelector("main");
 
-changeTheme("color1");
+changeTheme("color5");
 
 form.addEventListener("change", () => {
   changeTheme(getCheckedInputId());
