@@ -181,18 +181,9 @@ function setLocalStorage() {
     );
   } else {
     localStorage.setItem("stage", JSON.stringify(0));
-    localStorage.setItem(
-      "short-break",
-      JSON.stringify(document.getElementById("short-break-config").value)
-    );
-    localStorage.setItem(
-      "pomodoro",
-      JSON.stringify(document.getElementById("pomodoro-config").value)
-    );
-    localStorage.setItem(
-      "long-break",
-      JSON.stringify(document.getElementById("long-break-config").value)
-    );
+    localStorage.setItem("short-break", JSON.stringify(5));
+    localStorage.setItem("pomodoro", JSON.stringify(25));
+    localStorage.setItem("long-break", JSON.stringify(15));
   }
 }
 
