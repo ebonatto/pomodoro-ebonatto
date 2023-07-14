@@ -473,10 +473,6 @@
   color: var(--text-hover);
 }
 
-.hidden {
-  display: none;
-}
-
 /* Remove arrows from numeric input */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -600,4 +596,8 @@ input[type="number"] {
   .nova-geracao {
     width: 150px;
   }
+}
+
+.hidden {
+  display: none;
 }

@@ -11,6 +11,8 @@ const configDiv = document.querySelector(".config");
 //   document.querySelector(".timer").classList.remove("hidden");
 // });
 
+switchTimer();
+
 pomoButton.addEventListener("click", () => switchTimer());
 configButton.addEventListener("click", () => switchTimerConfig());
 themeButton.addEventListener("click", () => switchTimerTheme());
