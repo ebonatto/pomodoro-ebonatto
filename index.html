@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4d0194">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4d0194">
   <meta name="msapplication-TileColor" content="#9f00a7">
   <meta name="theme-color" content="#ffffff">
 
@@ -30,30 +30,33 @@
       <span class="material-icons nav-button" id="config-button">settings</span>
     </nav>
     <div class="app">
-      <div class="theme hidden">
+      <div class="theme">
         <h2 class="menu-title">Color</h2>
         <form name="theme-selector" class="colors" id="colors">
-          <input type="radio" name="theme-selector" id="color1">
-          <label for="color1" id="color1-swatch" class="swatch"></label>
+          <span class="color-row">
+            <input type="radio" name="theme-selector" id="color1">
+            <label for="color1" id="color1-swatch" class="swatch"></label>
 
-          <input type="radio" name="theme-selector" id="color2">
-          <label for="color2" id="color2-swatch" class="swatch"></label>
+            <input type="radio" name="theme-selector" id="color2">
+            <label for="color2" id="color2-swatch" class="swatch"></label>
 
-          <input type="radio" name="theme-selector" id="color3">
-          <label for="color3" id="color3-swatch" class="swatch"></label>
+            <input type="radio" name="theme-selector" id="color3">
+            <label for="color3" id="color3-swatch" class="swatch"></label>
+          </span>
+          <span class="color-row">
+            <input type="radio" name="theme-selector" id="color4">
+            <label for="color4" id="color4-swatch" class="swatch"></label>
 
-          <input type="radio" name="theme-selector" id="color4">
-          <label for="color4" id="color4-swatch" class="swatch"></label>
+            <input type="radio" name="theme-selector" id="color5">
+            <label for="color5" id="color5-swatch" class="swatch"></label>
 
-          <input type="radio" name="theme-selector" id="color5">
-          <label for="color5" id="color5-swatch" class="swatch"></label>
-
-          <input type="radio" name="theme-selector" id="color6">
-          <label for="color6" id="color6-swatch" class="swatch"></label>
+            <input type="radio" name="theme-selector" id="color6">
+            <label for="color6" id="color6-swatch" class="swatch"></label>
+          </span>
         </form>
         <img src="nova-geracao-logo.png" alt="Logo Nova Geração" class="nova-geracao hidden">
       </div>
-      <div class="timer">
+      <div class="timer hidden">
         <form name="select-botoes" class="select-botoes">
           <input type="radio" name="timer-select" id="short-break-select" />
           <label for="short-break-select">Short Break</label>
