@@ -8,8 +8,6 @@
 :root {
   --font: "Inter", sans-serif;
 
-  --timer-size: 400px;
-
   /* theme colors */
   --swatch-size: 50px;
   --swatch-border-radius: 15px;
@@ -81,6 +79,9 @@
 }
 
 .timer {
+  --timer-size: 400px;
+  --stroke: 7px;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -140,7 +141,7 @@
 
 /* The SVG path that displays the timer's progress */
 .base-timer__path-elapsed {
-  stroke-width: 7px;
+  stroke-width: var(--stroke);
   stroke: var(--tertiary-color);
 }
 
@@ -167,7 +168,7 @@
 
 .base-timer__path-remaining {
   /* Just as thick as the original ring */
-  stroke-width: 7px;
+  stroke-width: var(--stroke);
 
   /* Rounds the line endings to create a seamless circle */
   stroke-linecap: round;
@@ -201,10 +202,10 @@
 
 .start-pause {
   display: table-cell;
-  --height: 70px;
+  --height-start: 70px;
   width: 280px;
-  height: var(--height);
-  line-height: var(--height);
+  height: var(--height-start);
+  line-height: var(--height-start);
   background-color: var(--text);
   color: var(--tertiary-color);
   text-align: center;
@@ -421,8 +422,8 @@
 /* ebonatto.dev */
 .color5-theme {
   --base-color: #160029;
-  --secondary-color: #230042;
-  --tertiary-color: #420679;
+  --secondary-color: #420679;
+  --tertiary-color: #230042;
   --select-color: #28004c;
 
   --text: #f5ebff;
@@ -434,7 +435,7 @@
   --base-color: rgba(0, 0, 0, 1);
   --secondary-color: #00e846;
   --tertiary-color: #09c842;
-  --select-color: #009e2f;
+  --select-color: #008528;
 
   --text: rgba(0, 0, 0, 1);
   --text-hover: rgba(0, 0, 0, 0.8);
@@ -443,7 +444,7 @@
 .color6-theme nav,
 .color6-theme footer {
   --text: #00e846;
-  --text-hover: #009e2f;
+  --text-hover: #008528;
 }
 
 .theme img {
@@ -486,3 +487,79 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 } */
+
+@media (max-width: 730px) {
+  .nav {
+    gap: 40px;
+  }
+
+  .select-botoes {
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .select-botoes label {
+    width: 100%;
+    height: 50px;
+  }
+
+  .timer {
+    --timer-size: 300px;
+    --stroke: 4px;
+  }
+
+  .timer-botoes {
+    gap: 10px;
+  }
+
+  .base-timer__label {
+    font-size: 65px;
+  }
+
+  .start-pause {
+    width: 220px;
+  }
+}
+
+@media (max-width: 530px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .material-icons.nav-button {
+    font-size: 30px;
+  }
+
+  .select-botoes label {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .timer {
+    --timer-size: 250px;
+  }
+
+  .timer-botoes {
+    gap: 5px;
+  }
+
+  .base-timer__label {
+    font-size: 55px;
+  }
+
+  .start-pause {
+    --height-start: 55px;
+    width: 150px;
+    font-size: 30px;
+  }
+
+  .material-icons.timer-icon {
+    font-size: 40px;
+  }
+}
