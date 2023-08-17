@@ -7,7 +7,7 @@ const novaGeracaoLogo = document.querySelector(".nova-geracao");
 const defaultTheme = "color6";
 
 setLocalStorageTheme();
-changeTheme(localStorage.getItem("theme"));
+changeTheme(localStorage.getItem("theme-color"));
 
 form.addEventListener("change", () => {
   changeTheme(getCheckedInputId());
@@ -29,13 +29,13 @@ function changeTheme(colorId) {
   } else {
     novaGeracaoLogo.classList.add("hidden");
   }
-  localStorage.setItem("theme", colorId);
+  localStorage.setItem("theme-color", colorId);
 }
 
 function setLocalStorageTheme() {
-  if (localStorage.getItem("theme")) {
-    changeTheme(localStorage.getItem("theme"));
+  if (localStorage.getItem("theme-color")) {
+    changeTheme(localStorage.getItem("theme-color"));
   } else {
-    localStorage.setItem("theme", defaultTheme);
+    localStorage.setItem("theme-color", defaultTheme);
   }
 }
